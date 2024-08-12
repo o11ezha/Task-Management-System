@@ -12,14 +12,18 @@
 > Если порты заняты, измените их в файле `docker-compose.yml` в разделе `services` -> `app` -> `ports` и `services` -> `db` -> `ports`.
 
 Для того, чтобы поднять проект в docker, вам нужно:
+
 1. Склонировать репозиторий
 ```bash
 git clone https://github.com/o11ezha/Task-Management-System.git
 ```
+
 2. Перейти в папку проекта (Task-Management-System\\**ControlPanel**)
+
 3. Выполнить команду `./mvnw package -DskipTests` 
-![Запуск команды](https://www.dropbox.com/scl/fi/0sia9fcxpvktkf5rdn6o6/2024-08-12-194525.png?rlkey=r6e6w3vubwrzr92b53k6gef2q&st=oywpj13e&dl=1)
+![Запуск команды](https://github.com/o11ezha/Task-Management-System/raw/assets/ControlPanel/assets/Снимок%20экрана%202024-08-12%20194525.png)
 После этого у Вас должна появиться папка `target` в корне проекта.
+
 4. Создать файл `.env` в корне проекта и добавить в него следующие переменные:
 ```
 DB_USERNAME=<ЗдесьВашеЗначение> # Имя пользователя для подключения к БД
@@ -30,14 +34,17 @@ DB_NAME=<ЗдесьВашеЗначение> # Имя БД
 TOKEN_SECRET=<ЗдесьВашеЗначение> # Секретный ключ для генерации токенов
 TOKEN_TIME_TO_LIVE=86400000 # Время жизни токена в миллисекундах
 ```
-![Файл .env](https://www.dropbox.com/scl/fi/dezj1b1dh9nwudadu85w6/2024-08-12-195248.png?rlkey=8muzzpu1shi23qb43plvgxls2&st=eild13e7&dl=1)
+![Файл .env](https://github.com/o11ezha/Task-Management-System/raw/assets/ControlPanel/assets/Снимок%20экрана%202024-08-12%20195248.png)
+
 5. Выполнить команду:
 ```bash
 docker-compose up --build
 ```
 После этого у Вас поднимутся два контейнера (внизу приведён скрин из Docker Desktop):
-![Скрин из Docker Desktop с двумя контейнерами](https://www.dropbox.com/scl/fi/gl33f5sbyfg9yf3mdqfsc/2024-08-12-195433.png?rlkey=28uvoubfk5jxkyecjxvgt9vtd&st=v1nj0s45&dl=1)
+![Скрин из Docker Desktop с двумя контейнерами](https://github.com/o11ezha/Task-Management-System/raw/assets/ControlPanel/assets/Снимок%20экрана%202024-08-12%20195433.png)
+
 6. API будет доступно по адресу `http://localhost:8080/api/`
+
 7. Документация к API будет доступна по адресу `http://localhost:8080/api/swagger-ui/index.html`
 
 > ❗️ Внимание❗ ️
